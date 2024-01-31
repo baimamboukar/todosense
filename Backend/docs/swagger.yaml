@@ -7,6 +7,7 @@ servers:
   - url: /api/v1
     description: Development server
 
+Certainly! Here is the merged `paths` key for both sets of paths:
 
 paths:
   /auth/createuser:
@@ -86,6 +87,138 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
+
+  /notes/fetchallnotes:
+    get:
+      summary: Get all notes for logged-in user
+      description: Returns all notes for the authenticated user.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              example:
+                message: All Notes Fetched Successfully
+                notes:
+                  - _id: "noteId"
+                    title: "Note Title"
+                    description: "Note Description"
+                    tag: "Note Tag"
+                    date: "2024-01-30T12:00:00.000Z"
+                    user: "userId"
+
+  /notes/addnote:
+    post:
+      summary: Add a new note for logged-in user
+      description: Adds a new note for the authenticated user.
+      requestBody:
+        content:
+          application/json:
+            example:
+              title: "New Note"
+              description: "Note Description"
+              tag: "Note Tag"
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              example:
+                message: Note added successfully
+                note:
+                  _id: "noteId"
+                  title: "New Note"
+                  description: "Note Description"
+                  tag: "Note Tag"
+                  date: "2024-01-30T12:00:00.000Z"
+                  user: "userId"
+
+  /notes/updatenote/{id}:
+    put:
+      summary: Update an existing note for logged-in user
+      description: Updates an existing note for the authenticated user.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+          description: Note ID
+      requestBody:
+        content:
+          application/json:
+            example:
+              title: "Updated Note"
+              description: "Updated Note Description"
+              tag: "Updated Note Tag"
+              date: "2024-01-30T12:00:00.000Z"
+              isCompleted: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              example:
+                message: Note Updated Successfully
+                note:
+                  _id: "noteId"
+                  title: "Updated Note"
+                  description: "Updated Note Description"
+                  tag: "Updated Note Tag"
+                  date: "2024-01-30T12:00:00.000Z"
+                  user: "userId"
+
+  /notes/deletenote/{id}:
+    delete:
+      summary: Delete a note for logged-in user
+      description: Deletes a note for the authenticated user.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+          description: Note ID
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              example:
+                message: Note deleted Successfully
+                note:
+                  _id: "noteId"
+                  title: "Deleted Note"
+                  description: "Deleted Note Description"
+                  tag: "Deleted Note Tag"
+                  date: "2024-01-30T12:00:00.000Z"
+                  user: "userId"
+
+  /notes/markasdone/{id}:
+    patch:
+      summary: Mark a note as read for logged-in user
+      description: Marks a note as read for the authenticated user.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+          description: Note ID
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              example:
+                message: Note marked as read successfully
+                note:
+                  _id: "noteId"
+                  title: "Read Note"
+                  description: "Read Note Description"
+                  tag: "Read Note Tag"
+                  date: "2024-01-30T12:00:00.000Z"
+                  user: "userId"
 
 components:
   schemas:
@@ -231,7 +364,7 @@ components:
                   date: "2024-01-30T12:00:00.000Z"
                   user: "userId"
 
-  /notes/deletenote/{id}:
+  /notes/deletetask/{id}:
     delete:
       summary: Delete a note for logged-in user
       description: Deletes a note for the authenticated user.
