@@ -6,12 +6,16 @@ import path from "path";
 import authRoutes from "./routes/auth.js";
 import notesRoutes from "./routes/notes.js";
 import morgan from "morgan";
+import swaggerUi from "swagger-ui-express";
+import YAML from "yamljs";
+
 dotenv.config();
 connectToMongo();
 
 const app = express();
 const port = 8000; // process.env.PORT || 8000;
 
+const swaggerDocument = YAML.load("./docs/swagger.yaml");
 // Middleware for logging requests
 app.use(morgan("dev"));
 
@@ -24,6 +28,9 @@ app.use(
     credentials: true,
   })
 );
+
+//Docs route
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 // Available Routes
 app.use("/api/v1/auth", authRoutes);
