@@ -1,0 +1,28 @@
+{
+  "name": "todosense-backend",
+  "version": "2.0.0",
+  "description": "The backend for dev_notes app",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "author": "Baimam Boukar JJ",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dev_notes": "file:..",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.1",
+    "express-validator": "^6.14.2",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.4.7",
+    "morgan": "^1.10.0",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+}
