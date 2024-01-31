@@ -132,8 +132,8 @@ router.put("/updatetask/:id", fetchuser, async (req, res) => {
   }
 });
 
-// ROUTE 4: Delete any note for loggedIn user using :  DELETE -> "/api/v1/notes/deletenote/:id" . Note: ' Login Required'.
-router.delete("/deletenote/:id", fetchuser, async (req, res) => {
+// ROUTE 4: Delete any note for loggedIn user using :  DELETE -> "/api/v1/notes/deletetask/:id" . Note: ' Login Required'.
+router.delete("/deletetask/:id", fetchuser, async (req, res) => {
   const errors = validationResult(req);
   //  If there is any error return error 400 status with the error
   if (!errors.isEmpty()) {
