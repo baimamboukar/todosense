@@ -30,7 +30,7 @@ interface NoteitemProps {
   };
 const Noteitem: FC<NoteitemProps> = ({ note, updatetask }) => {
   const context = useContext(NoteContext);
-  const { deleteNote } = context;
+  const { deletetask } = context;
   const [open, setOpen] = useState(false);
   const { fetchNotes } = context;
   const navigate = useNavigate();
@@ -63,7 +63,7 @@ const Noteitem: FC<NoteitemProps> = ({ note, updatetask }) => {
 
   return (
     <>
-      <AlertModal isOpen={open} onClose={() => setOpen(false)} onConfirm={() => deleteNote(note._id)} />
+      <AlertModal isOpen={open} onClose={() => setOpen(false)} onConfirm={() => deletetask(note._id)} />
 
       <Card className="w-full">
         <CardHeader className="px-2 pt-2">

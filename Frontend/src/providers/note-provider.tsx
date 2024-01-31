@@ -9,7 +9,7 @@ const HOST = import.meta.env.VITE_HOST;
 
 interface InitialDataType {
   notes: Note[] | null;
-  deleteNote: (id: string) => void;
+  deletetask: (id: string) => void;
   fetchNotes: () => void;
   markNoteAsDone: (id: string) => void;
 }
@@ -17,7 +17,7 @@ interface InitialDataType {
 const notes: Note[] = [];
 const initialData: InitialDataType = {
   notes,
-  deleteNote: () => {},
+  deletetask: () => {},
   fetchNotes: () => {},
   markNoteAsDone: () => {}, 
 };
@@ -50,9 +50,9 @@ const NoteProvider: FC<NoteProviderProps> = ({ children }) => {
     }
   };
 
-  const deleteNote = async (id: string) => {
+  const deletetask = async (id: string) => {
     try {
-      const response = await axios.delete(`${HOST}/api/v1/notes/deletenote/${id}`, {
+      const response = await axios.delete(`${HOST}/api/v1/notes/deletetask/${id}`, {
         headers,
       });
       const json = response.data;
@@ -88,7 +88,7 @@ const NoteProvider: FC<NoteProviderProps> = ({ children }) => {
   };
 
   return (
-    <NoteContext.Provider value={{ notes, deleteNote, fetchNotes, markNoteAsDone }}>
+    <NoteContext.Provider value={{ notes, deletetask, fetchNotes, markNoteAsDone }}>
       {children}
     </NoteContext.Provider>
   );

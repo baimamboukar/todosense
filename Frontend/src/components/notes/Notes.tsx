@@ -58,7 +58,7 @@ const Notes = () => {
         <div className="my-10">
           <div className="absolute w-full px-4 text-center -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
             {notes === null ? (
-              <h5 className="text-lg font-medium">Loading...</h5>
+              <h5 className="text-lg font-medium">Getting Your Tasks List...</h5>
             ) :
               notes.length < 1 && (
                 <>
