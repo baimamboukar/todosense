@@ -59,7 +59,7 @@ const NotesForm: FC<NotesFormProps> = ({ initialData, handleSubmit }) => {
             if (initialData) {
 
 
-                await axios.put(`${HOST}/api/v1/notes/updatenote/${initialData._id}`, data, options)
+                await axios.put(`${HOST}/api/v1/notes/updatetask/${initialData._id}`, data, options)
             } else {
                 await axios.post(`${HOST}/api/v1/notes/addtask`, data, options)
             }

@@ -75,8 +75,8 @@ router.post(
     }
   }
 );
-// ROUTE 3: Update any existing note for loggedIn user using :  PUT -> "/api/v1/notes/updatenote/:id" . Note: ' Login Required'.
-router.put("/updatenote/:id", fetchuser, async (req, res) => {
+// ROUTE 3: Update any existing note for loggedIn user using :  PUT -> "/api/v1/notes/updatetask/:id" . Note: ' Login Required'.
+router.put("/updatetask/:id", fetchuser, async (req, res) => {
   // Get all the notes data entered by the user using destructuring
   const { title, description, tag, date, isCompleted } = req.body;
   const errors = validationResult(req);

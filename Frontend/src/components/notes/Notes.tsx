@@ -73,7 +73,7 @@ const Notes = () => {
             {notes && notes.map((note) => {
               return (
                 <div key={note?._id}>
-                  <NoteItem note={note} updateNote={() => openModal(note)} />
+                  <NoteItem note={note} updatetask={() => openModal(note)} />
                 </div>
               );
             })}

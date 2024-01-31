@@ -196,7 +196,7 @@ components:
                   date: "2024-01-30T12:00:00.000Z"
                   user: "userId"
 
-  /notes/updatenote/{id}:
+  /notes/updatetask/{id}:
     put:
       summary: Update an existing note for logged-in user
       description: Updates an existing note for the authenticated user.

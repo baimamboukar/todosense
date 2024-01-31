@@ -15,7 +15,7 @@ import { useNavigate } from "react-router-dom";
 const HOST = import.meta.env.VITE_HOST;
 interface NoteitemProps {
   note: Note;
-  updateNote: (note: Note) => void;
+  updatetask: (note: Note) => void;
 }
   const format = (dateString: string) => {
     // Convert ISO date to Date object
@@ -28,7 +28,7 @@ interface NoteitemProps {
       year: 'numeric',
     });
   };
-const Noteitem: FC<NoteitemProps> = ({ note, updateNote }) => {
+const Noteitem: FC<NoteitemProps> = ({ note, updatetask }) => {
   const context = useContext(NoteContext);
   const { deleteNote } = context;
   const [open, setOpen] = useState(false);
@@ -43,7 +43,7 @@ const Noteitem: FC<NoteitemProps> = ({ note, updateNote }) => {
       }
         };
       note.isCompleted = true;
-      const response = await axios.put(`${HOST}/api/v1/notes/updatenote/${note._id}`, {...note, isCompleted: true}, options);
+      const response = await axios.put(`${HOST}/api/v1/notes/updatetask/${note._id}`, {...note, isCompleted: true}, options);
       const json = response.data;
       
         toast.success(json.message);
@@ -83,7 +83,7 @@ const Noteitem: FC<NoteitemProps> = ({ note, updateNote }) => {
                 
               </ToolTipBox>
               <ToolTipBox tip="Edit Note">
-                <button onClick={() => updateNote(note)} className="cursor-pointer w-8 h-8 relative flex select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50">
+                <button onClick={() => updatetask(note)} className="cursor-pointer w-8 h-8 relative flex select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50">
                   <Edit size={20} />
                 </button>
               </ToolTipBox>
