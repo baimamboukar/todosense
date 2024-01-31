@@ -1,6 +1,4 @@
-# todosense : Secured on the cloud
-
-### Dev_Notes is a Notes App created using MERN Stack, to help users store their notes, and access it anywhere anytime.
+# Todosense
 
 ---
 
@@ -14,6 +12,7 @@
 - Validation: [ Typescript, zod, use-form ]
 - Icons: [ lucide-react ]
 - axios
+- Docker
 
 #### Backend:
 
@@ -22,7 +21,7 @@
 - MongoDb
 - mongoose
 - bcryptjs
-- jsonwebtoken
+- JWT
 
 ---
 
@@ -33,7 +32,7 @@
 
 ```js
 run `git init` in your project directory
-run `git clone Your_Repository_Link` ex.=> `git clone https://github.com/YOUR_GITHUB_USERNAME/Dev_Notes.git`
+run `git clone Your_Repository_Link` ex.=> `git clone https://github.com/YOUR_GITHUB_USERNAME/todosense.git`
 ```
 
 - Run `npm run init` cpmmand in the root directory of the project (To install all the dependencies).
@@ -139,4 +138,3 @@ value: YOUR_BACKEND_WEBSITE_URL;
 
 ---
 
-## Your website is live on your Frontend Website Link.
