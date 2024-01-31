@@ -25,9 +25,9 @@ router.get("/gettasks", fetchuser, async (req, res) => {
   }
 });
 
-// ROUTE 2: Add new notes for loggedIn user using :  POST -> "/api/v1/notes/addnotes" . Note: ' Login Required'.
+// ROUTE 2: Add new notes for loggedIn user using :  POST -> "/api/v1/notes/addtasks" . Note: ' Login Required'.
 router.post(
-  "/addnote",
+  "/addtask",
   fetchuser,
   [
     // body("user").exists(),

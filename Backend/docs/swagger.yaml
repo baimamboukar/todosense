@@ -170,7 +170,7 @@ components:
                     date: "2024-01-30T12:00:00.000Z"
                     user: "userId"
 
-  /notes/addnote:
+  /notes/addtask:
     post:
       summary: Add a new note for logged-in user
       description: Adds a new note for the authenticated user.

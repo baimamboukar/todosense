@@ -61,7 +61,7 @@ const NotesForm: FC<NotesFormProps> = ({ initialData, handleSubmit }) => {
 
                 await axios.put(`${HOST}/api/v1/notes/updatenote/${initialData._id}`, data, options)
             } else {
-                await axios.post(`${HOST}/api/v1/notes/addnote`, data, options)
+                await axios.post(`${HOST}/api/v1/notes/addtask`, data, options)
             }
             toast.success(toastMessage)
             fetchNotes()
