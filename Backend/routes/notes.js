@@ -4,8 +4,8 @@ import Notes from "../models/Notes.js";
 import fetchuser from "../middleware/fetchuser.js";
 import { body, validationResult } from "express-validator";
 
-// ROUTE 1: Get all the notes of user using :  GET -> "/api/v1/notes/fetchallnotes" . Note: ' Login Required'.
-router.get("/fetchallnotes", fetchuser, async (req, res) => {
+// ROUTE 1: Get all the notes of user using :  GET -> "/api/v1/notes/gettasks" . Note: ' Login Required'.
+router.get("/gettasks", fetchuser, async (req, res) => {
   // Put everything inside the try block so that if any error occur then,
   // we can handle in the catch block
   try {

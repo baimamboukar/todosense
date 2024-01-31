@@ -38,7 +38,7 @@ const NoteProvider: FC<NoteProviderProps> = ({ children }) => {
 
   const fetchNotes = async () => {
     try {
-      const response = await axios.get(`${HOST}/api/v1/notes/fetchallnotes`, {
+      const response = await axios.get(`${HOST}/api/v1/notes/gettasks`, {
         headers,
       });
       const json = response.data;
